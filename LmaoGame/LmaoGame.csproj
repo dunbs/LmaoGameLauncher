@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2565DC8-6EE5-4113-9DCE-623F13138A08}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LmaoGame</RootNamespace>
+    <AssemblyName>LmaoGame</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DarkUI">
+      <HintPath>.\DarkUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Conversion.cs" />
+    <Compile Include="Common\LmaoConstant.cs" />
+    <Compile Include="DAL\AccountDAO.cs" />
+    <Compile Include="DAL\DAO.cs" />
+    <Compile Include="DAL\DLCDAO.cs" />
+    <Compile Include="DAL\GameDAO.cs" />
+    <Compile Include="DAL\GerneDAO.cs" />
+    <Compile Include="EpicGameLancherDataSet.cs">
+      <DependentUpon>EpicGameLancherDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EpicGameLancherDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EpicGameLancherDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\DLC.cs" />
+    <Compile Include="Model\Game.cs" />
+    <Compile Include="Model\Gerne.cs" />
+    <Compile Include="UI\BrowseGames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BrowseGames.Designer.cs">
+      <DependentUpon>BrowseGames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialog\Input.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialog\Input.Designer.cs">
+      <DependentUpon>Input.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GameDLCInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GameDLCInformation.Designer.cs">
+      <DependentUpon>GameDLCInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GameDetailInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GameDetailInformation.Designer.cs">
+      <DependentUpon>GameDetailInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GameInfomation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GameInfomation.Designer.cs">
+      <DependentUpon>GameInfomation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LmaoEvent\LoginStateChanged_EventArgs.cs" />
+    <Compile Include="UI\LmaoEvent\RequestChangeView_EventArgs.cs" />
+    <Compile Include="UI\Model\GameComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Dialog\PlayGameScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialog\PlayGameScreen.Designer.cs">
+      <DependentUpon>PlayGameScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Store.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Store.Designer.cs">
+      <DependentUpon>Store.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Library.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Library.Designer.cs">
+      <DependentUpon>Library.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialog\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialog\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainScreen.Designer.cs">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Runner.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialog\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialog\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WelcomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WelcomeScreen.Designer.cs">
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl.cs" />
+    <EmbeddedResource Include="UI\BrowseGames.resx">
+      <DependentUpon>BrowseGames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialog\Input.resx">
+      <DependentUpon>Input.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GameDLCInformation.resx">
+      <DependentUpon>GameDLCInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GameDetailInformation.resx">
+      <DependentUpon>GameDetailInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GameInfomation.resx">
+      <DependentUpon>GameInfomation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialog\PlayGameScreen.resx">
+      <DependentUpon>PlayGameScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Store.resx">
+      <DependentUpon>Store.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Library.resx">
+      <DependentUpon>Library.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialog\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainScreen.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialog\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WelcomeScreen.resx">
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include=".editorconfig" />
+    <None Include="EpicGameLancherDataSet.xsc">
+      <DependentUpon>EpicGameLancherDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EpicGameLancherDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EpicGameLancherDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EpicGameLancherDataSet.xss">
+      <DependentUpon>EpicGameLancherDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\Store-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\user-images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\face.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lib\flatlaf-core-0.9.jar" />
+    <None Include="Resources\lib\AbsoluteLayout.jar" />
+    <None Include="Resources\lib\flatlaf-swingx-0.28.jar" />
+    <None Include="bin\Debug\lib\flatlaf-core-0.9.jar" />
+    <None Include="bin\Debug\lib\flatlaf-swingx-0.28.jar" />
+    <None Include="bin\Debug\lib\AbsoluteLayout.jar" />
+    <Content Include="Properties\Resources\ava.jpg" />
+    <Content Include="Properties\Resources\ava_default.png" />
+    <Content Include="Properties\Resources\bigImageExample.jpg" />
+    <Content Include="Properties\Resources\script.sql" />
+    <Content Include="Properties\Resources\Temp\1.png" />
+    <Content Include="Properties\Resources\Temp\2.png" />
+    <Content Include="Properties\Resources\Temp\3.png" />
+    <Content Include="Properties\Resources\Temp\4.png" />
+    <Content Include="Properties\Resources\Temp\5.png" />
+    <None Include="Resources\PuzzleGame.jar" />
+    <None Include="Resources\DemoFlappyBird.jar" />
+    <None Include="Resources\pikachucodien2_setup_nsis.exe" />
+    <None Include="Resources\LMAO GAME.png" />
+    <None Include="Resources\Welcome3.gif" />
+    <None Include="Resources\Welcome2.gif" />
+    <None Include="Resources\Welcome.gif" />
+    <None Include="Resources\image_not_found.jpg" />
+    <None Include="Resources\ava_default.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
