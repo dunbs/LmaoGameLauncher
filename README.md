@@ -4,6 +4,6 @@ LmaoGameLauncher is a group project make by me (main programmer) and my friends 
 LmaoGameLauncher provides a store, a library and a user profile feature. When you Play game, it will run a random game in my game projects (Happy Frog, Puzzle Game).
 
 ### Instruction
-  - It is required to install SQL Server
-  - Run SQL script located in LmaoGame/script.sql
+  - It is required to install SQL Server.
+  - Run SQL script located in LmaoGame/script.sql.
   - To add a game, you will have to write SQL Insert Query by hand, there is no UI for doing that.
